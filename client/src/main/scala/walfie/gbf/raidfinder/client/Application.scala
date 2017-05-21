@@ -15,6 +15,7 @@ import walfie.gbf.raidfinder.protocol._
 object Application {
   @JSExport
   def init(url: String): Unit = {
+    println("Sick app, brah!")
     val maxReconnectInterval = Duration.seconds(10)
 
     val websocket = new BinaryProtobufWebSocketClient(url, maxReconnectInterval)

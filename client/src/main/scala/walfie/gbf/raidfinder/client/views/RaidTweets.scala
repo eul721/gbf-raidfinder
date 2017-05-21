@@ -50,7 +50,7 @@ object RaidTweets {
     isShown: Binding[Boolean]
   ): Binding[HTMLDivElement] = {
     <div class={ "gbfrf-column__notification-banner-item".addIf(!isShown.bind, "is-hidden") }>
-      <i class="gbfrf-column__notification-banner-icon material-icons">{ icon }</i>
+      <button class="gbfrf-column__notification-banner-icon material-icons">{ icon }</button>
       { text }
     </div>
   }
