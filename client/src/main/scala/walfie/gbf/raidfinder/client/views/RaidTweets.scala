@@ -57,7 +57,7 @@ object RaidTweets {
     }
 
     <div class={ "gbfrf-column__notification-banner-item".addIf(!isShown.bind, "is-hidden") }>
-      <button class="gbfrf-column__notification-banner-icon material-icons" onclick={ onClick }>{ icon }</button>
+      <button class="gbfrf-column__notification-banner-icon material-icons">{ icon }</button>
       { text }
     </div>
   }

@@ -410,6 +410,7 @@ object RaidFinderClient {
   object RaidBossColumn {
     def empty(bossName: BossName): RaidBossColumn = {
       val raidBoss = RaidBoss(name = bossName)
+      println(raidBoss)
       RaidBossColumn(
         raidBoss = Var(raidBoss),
         raidTweets = Vars.empty,
