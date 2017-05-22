@@ -49,8 +49,15 @@ object RaidTweets {
     icon:    String,
     isShown: Binding[Boolean]
   ): Binding[HTMLDivElement] = {
+
+    val onClick = { e: dom.Event =>
+      //checked := e.currentTarget.asInstanceOf[HTMLInputElement].checked
+      //onChange()
+      println("Click icon")
+    }
+
     <div class={ "gbfrf-column__notification-banner-item".addIf(!isShown.bind, "is-hidden") }>
-      <i class="gbfrf-column__notification-banner-icon material-icons">{ icon }</i>
+      <button class="gbfrf-column__notification-banner-icon material-icons" onclick={ onClick }>{ icon }</button>
       { text }
     </div>
   }

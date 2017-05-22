@@ -28,6 +28,7 @@ object MainContent {
     val selectedSoundId = Var[Option[NotificationSoundId]](None)
     val soundSelectionDialog = {
       val onSoundSave = { selectedSoundId: Option[NotificationSoundId] =>
+        println(selectedSoundId)
         selectedBossName.get.foreach { name =>
           client.setNotificationSound(name, selectedSoundId)
         }
@@ -40,6 +41,7 @@ object MainContent {
     }
 
     val onSoundMenuOpen: BossName => Unit = { bossName: BossName =>
+      println(bossName)
       selectedSoundId := client.getNotificationSound(bossName).map(_.id)
       selectedBossName := Some(bossName)
       soundSelectionDialog.asInstanceOf[js.Dynamic].showModal()
